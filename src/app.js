@@ -4,6 +4,8 @@ const hbs = require('hbs')
 
 const app = express()
 
+const port = process.env.PORT || 3000
+
 const geocode = require('./utils/geocode')
 const forecast = require('./utils/forecast')
 const { log } = require('console')
@@ -118,8 +120,8 @@ app.get('*', (req, res) => {
     })  
 })
 
-app.listen(3000, ()=>{
-    console.log('Server is up and running at port number 3000')
+app.listen(port, ()=>{
+    console.log('Server is up and running at port number ' + port)
 })
 
 // enter nodemon src/app.js -e js,hbs to include changes in js and hbs also.

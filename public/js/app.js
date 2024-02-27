@@ -16,7 +16,8 @@ message2.textContent = ''
 
 weatherForm.addEventListener("submit", (event)=>{
     event.preventDefault()
-    const url = 'http://localhost:3000/weather?lat='+latitude.value+'&long='+longitude.value+'&key=3d15c90b9ac54828be2102421241902'
+
+    const url = '/weather?lat='+latitude.value+'&long='+longitude.value+'&key=3d15c90b9ac54828be2102421241902'
     
     fetch(url).then((response) =>{
         response.json().then((data)=>{
